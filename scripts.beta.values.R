@@ -1,0 +1,8 @@
+RGset <- read.metharray(args[1])
+beta <- getBeta(RGset,offset=100)
+MSet.swan <- preprocessSWAN(RGset)
+beta.swan <- getBeta(MSet.swan,offset=100)
+pvalues<-detectionP(RGset, type = "m+u")
+beta.all<-cbind(beta,pvalues,beta.swan)
+colnames(beta.all)<-c("beta value","detection p-value","normalized beta value")
+write.table(beta.all,file=paste(args[1],".idatbeta.txt",sep=""),sep="\t",quote=F,col.names=NA)
