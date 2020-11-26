@@ -1,9 +1,9 @@
 beta.matrix<-read.table("beta_value_matrix.txt",header=T,row.names=1,sep="\t",fill=T)
-Five<-apply(beta.matrix,1,fivenum)
-Five<-t(Five)
+Five<-t(apply(beta.matrix,1,fivenum))
 colnames(Five)<-c("min","Q1","Q2","Q3","max")
 Mean<-as.matrix(apply(beta.matrix,1,mean))
 colnames(Mean)<-"mean"
-Five.mean<-cbind(Five,Mean)
+Five.mean<-as.data.frame(cbind(Five,Mean))
+Five.mean$MPLscore<-Five.mean$Q3-Five.mean$Q1
 Five.mean<-signif(Five.mean,5)
 write.table(Five.mean,file="fivenum-mean.txt",quote=F,col.names=NA,sep="\t")
