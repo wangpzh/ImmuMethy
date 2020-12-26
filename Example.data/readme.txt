@@ -1,1 +1,1 @@
-Only the top 100 rows are shown in the file 'GSM3398166.idatbeta.txt' to illustrate the file format.
+Only the top 100 rows are shown in each file to illustrate the file format.
