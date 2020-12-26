@@ -7,3 +7,5 @@ The Perl script 'betavalue2matrix.pl' is used to create a matrix file containing
 The file 'scripts.beta.values.R' includes some command line statements for beta value calculation by using the package 'minfi'.
 
 The file 'fivenum-mean.R' is used to return Tukey’s five-number summary of input data [i.e., minimum value, lower-hinge value (Q1), median value (Q2), upper-hinge value (Q3), maximum value], the mean of beta values, and MPL score for each methylation site.
+
+The Perl script 'site.attribute.pl' is used to calculate methylation attributes.
